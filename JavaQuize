@@ -1,0 +1,39 @@
+import java.util.Scanner;
+import java.util.Arrays; 
+
+public class Sample{
+     public static void main(String []args){
+        Scanner sc=new Scanner(System.in);
+         int player=sc.nextInt();
+       int data[][]=new int[player][2];
+       for(int k=0;k<player;k++)
+       {
+         for(int m=0;m<2;m++)
+         {
+           data[k][m]=sc.nextInt();
+         }
+       }
+       int points[]=new int[player];
+       int point1[]=new int[player];
+       for(int i=0;i<player;i++)
+       {
+           points[i]=(data[i][1]-data[i][0])+1;
+           point1[i]=points[i];
+       }
+       Arrays.sort(point1);
+       for(int i=0;i<player;i++)
+       {
+          int temp=points[i];
+          for(int j=0;j<player;j++)
+          {
+           	if(temp==point1[j])
+            {
+              System.out.print(j*2+" ");
+            }
+          }
+       }
+       
+     }     
+       
+}
+
